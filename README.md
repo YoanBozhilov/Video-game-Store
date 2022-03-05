@@ -1,1 +1,1 @@
-# Video-games-magazine
+# Video games magazine
