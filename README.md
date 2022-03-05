@@ -1,1 +1,1 @@
-# Video-game-Store
+# Video-games-magazine
