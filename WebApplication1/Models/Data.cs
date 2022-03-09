@@ -13,10 +13,10 @@ namespace WebApplication1.Models
         {
             this.Users = new List<User>()
             {
-                new User("Ivan", "Petrov", "ivanpetrov@gmail.com"),
-                new User("In", "Peov", "ivaetrov@gmail.com"),
-                new User("Ian", "Ptrov", "ivaov@gmail.com"),
-                new User("Ivn", "Prov", "itrov@gmail.com"),
+                new User(1,"ASd", "Gosho", "Goshev"),
+                new User(2,"ani123", "Ani", "Dimova"),
+                new User(3,"iva22", "Iva", "Stoyanova"),
+                new User(4,"gotinSimo12", "Simo", "Georgiev"),
             };
         }
     }

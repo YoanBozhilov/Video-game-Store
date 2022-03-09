@@ -8,12 +8,10 @@ namespace WebApplication1.Models
     public class User
     {
 
-            private static int id = 0;
-
             public User(int id, string email, string firstname, string lastname)
             {
 
-                Id = ++id;
+                Id = id;
                 FirstName = firstname;
                 LastName = lastname;
                 Email = email;
@@ -21,9 +19,10 @@ namespace WebApplication1.Models
             }
 
             public int Id { get; set; }
+            public string Email { get; set; }
             public string FirstName { get; set; }
             public string LastName { get; set; }
-            public string Email { get; set; }
+            
     }
 }
 

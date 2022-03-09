@@ -9,14 +9,15 @@ namespace WebApplication1.DTOs
     {
         public UserDTO()
         {
+
         }
 
-        public UserDTO(int id, string username, string firstName, string lastName)
+        public UserDTO(int id, string email, string firstName, string lastName)
         {
             Id = id;
-            Email = username;
             FirstName = firstName;
             LastName = lastName;
+            Email = email;
         }
 
         public int Id { get; set; }
