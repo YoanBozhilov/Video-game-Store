@@ -10,7 +10,7 @@ namespace WebApplication1.Models
 
             private static int id = 0;
 
-            public User(string email, string firstname, string lastname)
+            public User(int id, string email, string firstname, string lastname)
             {
 
                 Id = ++id;
