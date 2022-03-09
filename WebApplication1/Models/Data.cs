@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Models
 {
-    public class Data
+    public class Data : IData
     {
         public List<User> Users { get; set; }
 
