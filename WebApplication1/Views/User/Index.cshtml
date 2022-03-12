@@ -1,4 +1,4 @@
-﻿@model List<User>
+﻿@model List<UserDTO>
 
 
 <a asp-action="Create">
@@ -26,22 +26,18 @@
                 <td>@user.LastName</td>
                 <td>@user.Email</td>
                 <td>
-                    <a asp-action="Edit" asp-route="@user.Id">
+                    <a asp-action="Edit" asp-route-id="@user.Id">
                         <button class="btn btn-warning">Edit User</button>
 
                     </a>
 
 
-                    <a asp-action="Delete" asp-route="@user.Id">>
+                    <a asp-action="Delete" asp-route-id="@user.Id">>
                         <button class="btn btn-danger">Delete User</button>
 
                     </a>
 
                 </td>
-
-
-
-
 
 
             </tr>
