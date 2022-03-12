@@ -9,6 +9,7 @@ using WebApplication1.Services;
 
 namespace WebApplication1.Controllers
 {
+    
     public class UserController : Controller
     {
         private IUserService userService;
