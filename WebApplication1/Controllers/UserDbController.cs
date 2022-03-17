@@ -51,7 +51,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            UserDTO user = userService.GetById(id);
+            User user = userService.GetById(id);
 
             return View(user);
         }
@@ -67,7 +67,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            UserDTO user = userService.GetById(id);
+            User user = userService.GetById(id);
 
             return View(user);
         }
