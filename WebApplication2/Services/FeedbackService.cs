@@ -29,15 +29,6 @@ namespace WebApplication2.Services
             data.Feedbacks.Remove(feedback);
         }
 
-        public void Edit(int id, FeedbackDTO feedbackDto)
-        {
-            Feedback feedback = this.GetEntityById(id);
-            feedback.Email = feedbackDto.Email;
-            feedback.Name = feedbackDto.Name;
-            feedback.Message = feedbackDto.Message;
-
-        }
-
         public List<FeedbackDTO> GetAll()
         {
             return data.Feedbacks
@@ -57,12 +48,12 @@ namespace WebApplication2.Services
 
         private Feedback toEntity(FeedbackDTO feedbackDTO)
         {
-            return new Feedback(feedbackDTO.Id, feedbackDTO.Email, feedbackDTO.Name, feedbackDTO.Message);
+            return new Feedback(feedbackDTO.Id, feedbackDTO.Name, feedbackDTO.Email, feedbackDTO.Message);
         }
 
         private FeedbackDTO toDTO(Feedback feedback)
         {
-            return new FeedbackDTO(feedback.Id, feedback.Email, feedback.Name, feedback.Message);
+            return new FeedbackDTO(feedback.Id, feedback.Name, feedback.Email, feedback.Message);
         }
     }
 }

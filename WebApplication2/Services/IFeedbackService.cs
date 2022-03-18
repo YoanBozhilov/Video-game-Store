@@ -7,7 +7,6 @@ namespace WebApplication2.Services
     {
         void Create(FeedbackDTO feedbackDto);
         void Delete(int id);
-        void Edit(int id, FeedbackDTO feedbackDto);
         List<FeedbackDTO> GetAll();
         FeedbackDTO GetById(int id);
     }

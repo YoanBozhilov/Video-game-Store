@@ -28,6 +28,8 @@ namespace WebApplication2
             services.AddControllersWithViews();
             services.AddScoped<IFeedbackService, FeedbackService>();
             services.AddSingleton<IData, Data>();
+            services.AddDbContext<FeedbackDbContext>();
+            services.AddScoped<FeedbackDbService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
