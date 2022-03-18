@@ -31,6 +31,10 @@ namespace WebApplication1
             services.AddSingleton<IData, Data>();
             services.AddDbContext<UserDbContext>();
             services.AddScoped<UserDbService>();
+            services.AddScoped<IFeedbackService, FeedbackService>();
+            services.AddSingleton<IDatafeedback, Datafeedback>();
+            services.AddDbContext<FeedbackDbContext>();
+            services.AddScoped<FeedbackDbService>();
 
         }
 
