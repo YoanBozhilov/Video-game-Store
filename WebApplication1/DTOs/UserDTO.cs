@@ -12,7 +12,7 @@ namespace WebApplication1.DTOs
 
         }
 
-        public UserDTO(int id, string email, string firstName, string lastName)
+        public UserDTO(int id, string firstName, string lastName, string email)
         {
             Id = id;
             FirstName = firstName;

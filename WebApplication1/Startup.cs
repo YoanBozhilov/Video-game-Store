@@ -35,6 +35,8 @@ namespace WebApplication1
             services.AddSingleton<IDatafeedback, Datafeedback>();
             services.AddDbContext<FeedbackDbContext>();
             services.AddScoped<FeedbackDbService>();
+            services.AddDbContext<GameDbContext>();
+            services.AddScoped<GameServices>();
 
         }
 

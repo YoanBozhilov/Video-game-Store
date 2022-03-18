@@ -11,7 +11,7 @@ namespace WebApplication1.Models
         {
 
         }
-        public User(int id, string email, string firstname, string lastname)
+        public User(int id, string firstname, string lastname, string email)
         {
 
             Id = id;
