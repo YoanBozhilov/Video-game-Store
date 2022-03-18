@@ -52,7 +52,7 @@ namespace WebApplication1.Services
             }
         private static UserDTO ToDTO(User user)
         {
-            return new UserDTO(user.Id, user.Email, user.FirstName, user.LastName);
+            return new UserDTO(user.Id, user.FirstName, user.LastName, user.Email);
         }
     }
 }
