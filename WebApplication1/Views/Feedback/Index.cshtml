@@ -1,0 +1,40 @@
+﻿@model List<FeedbackDTO>
+
+
+<a asp-action="Create">
+<button class="btn btn-primary">Create feedback</button>
+
+</a>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var feedback in Model)
+        {
+            <tr>
+                <th scope="row">@feedback.Id</th>
+                <td>@feedback.Name</td>
+                <td>@feedback.Email</td>
+                <td>@feedback.Message</td>
+
+                <td>
+                    
+                    <a asp-action="Delete" asp-route-id="@feedback.Id">
+                        
+                        <button class="btn btn-danger">Delete</button>
+
+                    </a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

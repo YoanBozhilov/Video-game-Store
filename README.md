@@ -1,2 +1,1 @@
 # Video games magazine
-hi
