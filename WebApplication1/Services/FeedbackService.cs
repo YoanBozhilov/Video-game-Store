@@ -40,6 +40,7 @@ namespace WebApplication1.Services
             }
             Feedback newFeedback = new Feedback();
             newFeedback.Message = feedback.Message;
+            newFeedback.User = user;
             dbContext.Feedbacks.Add(newFeedback);
             dbContext.SaveChanges();
         }

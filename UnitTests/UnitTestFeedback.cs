@@ -35,6 +35,10 @@ namespace UnitTests
 
             this.context = new AllDbContext(options);
             feedbackService = new FeedbackService(this.context);
+            context.Users.Add(new User(1, "FirstName", "LastName", "Email"));
+            context.SaveChanges();
+            FeedbackDTO feedback = Create(1, "FirstName", "Email", "Message");
+            feedbackService.CreateFeedback(feedback);
         }
 
 
@@ -47,46 +51,25 @@ namespace UnitTests
         [Test]
         public void TestGetById()
         {
-            FeedbackDTO feedback = Create(1, "FirstName", "Email", "Message");
-           
-            feedbackService.CreateFeedback(feedback);
-
-            FeedbackDTO dbFeedback = feedbackService.GetDTOById(1);
-
+            Feedback dbFeedback = feedbackService.GetById(1);
             Assert.AreEqual(dbFeedback.Message, "Message");
-            Assert.AreEqual(dbFeedback.FirstName, "Name");
-            Assert.AreEqual(dbFeedback.Email, "Email");
         }
 
         [Test]
         public void TestCreate()
         {
-
-            FeedbackDTO feedback = Create(1, "FirstName", "Email", "Message");
-
+            FeedbackDTO feedback = Create(2, "FirstName", "Email", "Message");
             feedbackService.CreateFeedback(feedback);
-
-            FeedbackDTO dbFeedback = context.Feedbacks.FirstOrDefault();
-
+            Feedback dbFeedback = context.Feedbacks.FirstOrDefault(x => x.Id == 2);
             Assert.NotNull(dbFeedback);
         }
 
         [Test]
         public void TestDelete()
         {
-            FeedbackService postService = new FeedbackService(this.context);
-
-            FeedbackDTO feedback = new FeedbackDTO();
-            feedback.Id = 1;
-            feedback.Message = "Message";
-            feedback.Email = "Email";
-            feedback.FirstName = "FirstName";
-
-            feedbackService.CreateFeedback(feedback);
-
             feedbackService.DeleteFeedback(1);
 
-            FeedbackDTO dbFeedback = context.Feedbacks.FirstOrDefault(x => x.Id == 1);
+            Feedback dbFeedback = context.Feedbacks.FirstOrDefault(x => x.Id == 1);
             Assert.Null(dbFeedback);
         }
     }
