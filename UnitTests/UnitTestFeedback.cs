@@ -66,7 +66,7 @@ namespace UnitTests
 
             feedbackService.CreateFeedback(feedback);
 
-            Feedback dbFeedback = context.Feedbacks.FirstOrDefault();
+            FeedbackDTO dbFeedback = context.Feedbacks.FirstOrDefault();
 
             Assert.NotNull(dbFeedback);
         }
@@ -86,7 +86,7 @@ namespace UnitTests
 
             feedbackService.DeleteFeedback(1);
 
-            Feedback dbFeedback = context.Feedbacks.FirstOrDefault(x => x.Id == 1);
+            FeedbackDTO dbFeedback = context.Feedbacks.FirstOrDefault(x => x.Id == 1);
             Assert.Null(dbFeedback);
         }
     }
